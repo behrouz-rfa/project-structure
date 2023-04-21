@@ -1,0 +1,1 @@
+a functionality like send otp/ email  or some sort of validation required in a domain model

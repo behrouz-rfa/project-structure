@@ -1,0 +1,1 @@
+models that a service use to intract with. (It can be also called request like UserCreateRequest/ UserCreateResponse)

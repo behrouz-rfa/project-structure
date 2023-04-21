@@ -1,0 +1,1 @@
+A function that serves exactly one client request

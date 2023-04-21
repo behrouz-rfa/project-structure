@@ -1,0 +1,1 @@
+configs in yaml only structure

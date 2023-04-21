@@ -1,0 +1,19 @@
+Addr: localhost:5050
+Postgres:
+  Host: localhost
+  Port: 5432
+  Username: postgres
+  Password: postgres
+  Name: test
+  Schema: auction
+  Driver: postgres
+  IgnorePermissionDenied: true
+Services:
+  workflow: grpcs://127.0.0.1:5031
+Nats:
+  Url: localhost
+  Port: 4222
+  Topic:
+    Read: auction_handler_steps
+    Write: auction_handler_read
+

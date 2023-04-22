@@ -1,0 +1,91 @@
+
+type User {
+   id: ID!
+   email: String!
+   firstName: String!
+   lastName: String!
+   middleName: String
+   profilePicture: String
+   phoneNumber: String
+   emailVerified: Boolean!
+   active: Boolean!
+   role: String!
+   createdAt: Time
+   updatedAt: Time
+}
+
+
+input UserCreateInput {
+   email: String!
+   firstName: String!
+   lastName: String!
+   middleName: String
+   profilePicture: String
+   phoneNumber: String
+   emailVerified: Boolean
+   active: Boolean
+   role: String
+}
+
+input UserUpdateInput {
+   email: String
+   firstName: String
+   lastName: String
+   middleName: String
+   profilePicture: String
+   phoneNumber: String
+   emailVerified: Boolean
+   active: Boolean
+   role: String
+}
+
+input UserBy {
+   id: String
+   email: String
+   firstName: String
+   lastName: String
+   middleName: String
+   profilePicture: String
+   phoneNumber: String
+   emailVerified: Boolean
+   active: Boolean
+}
+
+input UserSort {
+   email: Order
+   firstName: Order
+   lastName: Order
+   middleName: Order
+   profilePicture: Order
+   phoneNumber: Order
+   emailVerified: Order
+   active: Order
+   createdAt: Order
+   updatedAt: Order
+}
+
+input UserFilter {
+   email: StringFilter
+   firstName: StringFilter
+   lastName: StringFilter
+   middleName: StringFilter
+   profilePicture: StringFilter
+   phoneNumber: StringFilter
+   emailVerified: Boolean
+   active: Boolean
+   createdAt: TimeRange
+   updatedAt: TimeRange
+}
+
+
+extend type Query {
+   user(by: UserBy!): User
+    users(filter: UserFilter,sort: UserSort): [User!]!
+}
+
+extend type Mutation {
+      createUser(input: UserCreateInput!): User!
+    updateUser(by: UserBy!, input: UserUpdateInput!): User!
+    deleteUser(id: ID!): Boolean!
+}
+

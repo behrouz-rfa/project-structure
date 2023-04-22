@@ -1,0 +1,36 @@
+input StringFilter {
+    eq: String
+    contains: String
+    neq: String
+    startWith: String
+    endWith: String
+}
+
+ enum Order {
+    ASC
+    DESC
+}
+
+
+input IntFilter {
+    eq: Int
+    neq: Int
+    gt: Int
+    gte: Int
+    lt: Int
+    lte: Int
+}
+
+input FloatFilter {
+    eq: Float
+    neq: Float
+    gt: Float
+    gte: Float
+    lt: Float
+    lte: Float
+}
+
+input TimeRange {
+    from: Time
+    to: Time
+}

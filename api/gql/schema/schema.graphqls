@@ -1,0 +1,11 @@
+# Common Scalars
+scalar Time
+scalar Map
+
+type Query {
+    gqlStatus: String
+}
+
+type Mutation {
+    checkStatus: String
+}

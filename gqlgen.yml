@@ -1,0 +1,36 @@
+schema:
+  - api/gql/schema/*.graphqls
+
+exec:
+  filename: internal/module/user/presentation/gql/generated/generated.go
+  package: generated
+
+model:
+    filename: internal/module/user/presentation/gql/dto/models_gen.go
+    package: dto
+
+resolver:
+  layout: follow-schema
+  dir: internal/module/user/presentation/gql/resolvers
+  package: resolvers
+
+autobind:
+  - "project-structure/internal/module/user/presentation/gql/dto"
+  - "project-structure/pkg/module/user/model/entity"
+  - "project-structure/pkg/module/user/application/dto"
+  - "project-structure/pkg/module/user/model/entity"
+  - "project-structure/pkg/module/user/model/filters"
+  - "project-structure/pkg/module/user/model/sort"
+
+models:
+  ID:
+      model:
+      - github.com/99designs/gqlgen/graphql.ID
+      - github.com/99designs/gqlgen/graphql.Int
+      - github.com/99designs/gqlgen/graphql.Int64
+      - github.com/99designs/gqlgen/graphql.Int32
+  Int:
+      model:
+      - github.com/99designs/gqlgen/graphql.Int
+      - github.com/99designs/gqlgen/graphql.Int64
+      - github.com/99designs/gqlgen/graphql.Int32

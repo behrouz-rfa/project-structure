@@ -1,13 +1,16 @@
-Addr: localhost:5050
-Postgres:
+Host: localhost
+Port: 3000
+GinMode: debug
+Mongo:
   Host: localhost
-  Port: 5432
-  Username: postgres
-  Password: postgres
+  Port: 27017
+  Username: root
+  Password: root
   Name: test
-  Schema: auction
-  Driver: postgres
-  IgnorePermissionDenied: true
+  SSL: false
+  Clustered: false
+  Driver: Mongo
+  Timeout: 20
 Services:
   workflow: grpcs://127.0.0.1:5031
 Nats:
